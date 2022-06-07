@@ -11,6 +11,12 @@ public class Personne {
         this.adressePostale = adressePostale;
     }
 
+    public void upperCaseName(String nom) {
+        System.out.print("Votre nom :" + this.getNom().toUpperCase());
+        System.out.println(" Votre prenom :" + this.getPrenom());
+    }
+
+
     public String getNom() {
         return nom;
     }
