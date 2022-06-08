@@ -1,4 +1,4 @@
-package TP10_Exercice1.listes;
+package TP10_Exercices.TP10_Exercice1.listes;
 
 import java.util.ArrayList;
 
