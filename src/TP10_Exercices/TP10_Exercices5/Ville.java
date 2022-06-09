@@ -1,6 +1,6 @@
 package TP10_Exercices.TP10_Exercices5;
 
-public class Ville {
+public class Ville implements Comparable<Ville>{
     public String nom;
     public int nbHab;
 
@@ -28,5 +28,13 @@ public class Ville {
 
     public void setNbHab(int nbHab) {
         this.nbHab = nbHab;
+    }
+
+    @Override
+    public int compareTo(Ville o) {
+//        return this.getNom().compareTo(o.getNom());
+        return o.getNbHab()-this.getNbHab();
+//        return Long.compare(this.getNbHab(), o.getNbHab());
+
     }
 }
