@@ -2,9 +2,25 @@ package TP10_Exercices.TP10_Exercices5;
 
 import java.util.Objects;
 
-public class Ville implements Comparable<Ville>{
+public class Ville implements Comparable<Ville> {
     public String nom;
     public int nbHab;
+    private Continent continent;
+
+    public Ville(String nom, int nbHab, Continent continent) {
+        this.nom = nom;
+        this.nbHab = nbHab;
+        this.continent = continent;
+    }
+
+
+    public Continent getContinent() {
+        return continent;
+    }
+
+    public void setContinent(Continent continent) {
+        this.continent = continent;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -17,16 +33,6 @@ public class Ville implements Comparable<Ville>{
     @Override
     public int hashCode() {
         return Objects.hash(nom, nbHab);
-    }
-
-    public Ville(String nom, int nbHab) {
-        this.nom = nom;
-        this.nbHab = nbHab;
-    }
-
-    @Override
-    public String toString() {
-        return "Nom : " + nom + " Nombre d'habitant : " + nbHab;
     }
 
     public String getNom() {
@@ -46,9 +52,15 @@ public class Ville implements Comparable<Ville>{
     }
 
     @Override
+    public String toString() {
+        return "Nom : " + nom + " Nombre d'habitant : " + nbHab + " Nom du continent : " + continent;
+    }
+
+
+    @Override
     public int compareTo(Ville o) {
 //        return this.getNom().compareTo(o.getNom());
-        return o.getNbHab()-this.getNbHab();
+        return o.getNbHab() - this.getNbHab();
 //        return Long.compare(this.getNbHab(), o.getNbHab());
 
     }
